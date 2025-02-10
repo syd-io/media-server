@@ -1,0 +1,27 @@
+services:
+  overseerr:
+    image: lscr.io/linuxserver/overseerr:latest
+    container_name: overseerr
+    environment:
+      - PUID=${PUID:?err}
+      - PGID=${PGID:?err}
+      - TZ=${TIMEZONE:?err}
+    volumes:
+      - ${FOLDER_FOR_CONFIGS:?err}/overseer/config:/config
+      - ${FOLDER_FOR_MEDIA:?err}:/data
+    ports:
+      - ${WEBUI_PORT_OVERSEER:?err}:5055
+    restart: unless-stopped
+  tautulli:
+    image: lscr.io/linuxserver/tautulli:latest
+    container_name: tautulli
+    environment:
+      - PUID=${PUID:?err}
+      - PGID=${PGID:?err}
+      - TZ=${TIMEZONE:?err}
+    volumes:
+      - ${FOLDER_FOR_CONFIGS:?err}/tautulli:/config
+    ports:
+      - ${WEBUI_PORT_TAUTULLI:?err}:8181
+    restart: unless-stopped
+networks: {}
