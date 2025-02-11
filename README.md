@@ -1,6 +1,6 @@
 # 🏠 Self-Hosted Media Server with Docker
 
-This repository contains configurations for a self-hosted media server. It includes popular applications for downloading, managing, and streaming media, all running within Docker containers.
+This repository contains `docker-compose.yml` configurations for a self-hosted media server. It includes popular applications for downloading, managing, and streaming media, all running within Docker containers.
 
 ## 🚀 Features
 
